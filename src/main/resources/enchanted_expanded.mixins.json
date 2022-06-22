@@ -6,7 +6,8 @@
     "mixins": [
         "PlayerEntityMixin",
         "MobEntityMixin",
-        "EnchantmentHelperMixin"
+        "EnchantmentHelperMixin",
+        "WitherSkeletonEntityMixin"
     ],
     "injectors": {
         "defaultRequire": 1

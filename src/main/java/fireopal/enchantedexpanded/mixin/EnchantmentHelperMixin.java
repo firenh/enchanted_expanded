@@ -12,10 +12,10 @@ import net.minecraft.entity.LivingEntity;
 
 @Mixin(EnchantmentHelper.class)
 public class EnchantmentHelperMixin {
-    // @Inject(method = "getKnockback", at = @At("RETURN"), cancellable = true)
-    // private static void getKnockback(LivingEntity entity, CallbackInfoReturnable<Integer> cir) {
-    //     cir.setReturnValue(
-    //         cir.getReturnValue() - (AlluringEnchantment.getKnockbackFactor() * EnchantmentHelper.getEquipmentLevel(EEEnchantments.ALLURING, entity))
-    //     );
-    // }
+    @Inject(method = "getKnockback", at = @At("RETURN"), cancellable = true)
+    private static void getKnockback(LivingEntity entity, CallbackInfoReturnable<Integer> cir) {
+        cir.setReturnValue(
+            cir.getReturnValue() - (AlluringEnchantment.getKnockbackFactor() * EnchantmentHelper.getEquipmentLevel(EEEnchantments.ALLURING, entity))
+        );
+    }
 }
