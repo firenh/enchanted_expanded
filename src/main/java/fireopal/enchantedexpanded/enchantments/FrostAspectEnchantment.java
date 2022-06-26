@@ -6,6 +6,7 @@ import net.minecraft.enchantment.Enchantments;
 import net.minecraft.enchantment.FireAspectEnchantment;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.world.World;
@@ -29,7 +30,7 @@ public class FrostAspectEnchantment extends FireAspectEnchantment implements Pol
     } 
 
     public static void spawnFrozenParticles(Entity e, World world) {
-        if (world instanceof ServerWorld) {
+        if (world instanceof ServerWorld && e instanceof LivingEntity && ((LivingEntity) e).hurtTime == 0) {
             ((ServerWorld) world).spawnParticles(
                 ParticleTypes.SNOWFLAKE, 
                 e.getX(), 

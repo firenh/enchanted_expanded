@@ -3,6 +3,7 @@ package fireopal.enchantedexpanded.enchantments;
 import eu.pb4.polymer.api.utils.PolymerObject;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
+import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.EquipmentSlot;
 
 public class AlluringEnchantment extends Enchantment implements PolymerObject {
@@ -15,12 +16,27 @@ public class AlluringEnchantment extends Enchantment implements PolymerObject {
     }
 
     @Override
-    public boolean isAvailableForRandomSelection() {
+    public int getMaxLevel() {
+        return 2;
+    }
+
+    @Override
+    public boolean isTreasure() {
         return false;
+    }
+
+    @Override
+    public boolean isAvailableForRandomSelection() {
+        return true;
     }
 
     @Override
     public boolean isCursed() {
         return true;
+    }
+
+    @Override
+    protected boolean canAccept(Enchantment other) {
+        return other != Enchantments.KNOCKBACK && super.canAccept(other);
     }
 }

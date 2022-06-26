@@ -3,6 +3,8 @@ package fireopal.enchantedexpanded.enchantments;
 import eu.pb4.polymer.api.utils.PolymerObject;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
+import net.minecraft.enchantment.Enchantments;
+import net.minecraft.enchantment.ProtectionEnchantment;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.damage.DamageSource;
 
@@ -24,6 +26,11 @@ public class MagicProtectionEnchantment extends Enchantment implements PolymerOb
     @Override
     public int getMaxLevel() {
         return 4;
+    }
+
+    @Override
+    public boolean canAccept(Enchantment other) {
+        return !(other instanceof ProtectionEnchantment && other != Enchantments.FEATHER_FALLING) && super.canAccept(other);
     }
 
     @Override

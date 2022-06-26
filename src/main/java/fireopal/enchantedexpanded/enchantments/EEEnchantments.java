@@ -22,4 +22,7 @@ public class EEEnchantments {
     public static final Enchantment WITHERING = register("withering", new WitheringEnchantment(Enchantment.Rarity.RARE, EquipmentSlot.MAINHAND));
     public static final Enchantment MAGIC_PROTECTION = register("magic_protection", new MagicProtectionEnchantment(Enchantment.Rarity.COMMON, EnchantmentTarget.ARMOR, ARMOR_SLOTS));
     public static final Enchantment ALLURING = register("alluring_curse", new AlluringEnchantment(Enchantment.Rarity.COMMON, EnchantmentTarget.WEAPON, EquipmentSlot.MAINHAND));
+    public static final Enchantment ATROPHY = register("atrophy_curse", new AtrophyEnchantment(Enchantment.Rarity.COMMON, EquipmentSlot.MAINHAND));
+    public static final Enchantment HARVEST = register("harvest", new HarvestEnchantment(Enchantment.Rarity.COMMON, EquipmentSlot.MAINHAND));
+
 }

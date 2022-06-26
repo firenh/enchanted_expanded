@@ -6,6 +6,7 @@ import fireopal.enchantedexpanded.enchantments.WitheringEnchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.util.math.MathHelper;
 
 public class OnAttack {
@@ -13,6 +14,7 @@ public class OnAttack {
         frostAspect(attacker, target);
         withering(attacker, target);
         alluring(attacker, target);
+        atrophy(attacker, target);
     }
 
     private static void frostAspect(LivingEntity attacker, Entity target) {
@@ -39,6 +41,14 @@ public class OnAttack {
         
         if (level > 0 && target instanceof LivingEntity && ((LivingEntity) target).hurtTime == 0) {
             ((LivingEntity)target).takeKnockback(0.75 + level * 0.75f, -MathHelper.sin(attacker.getYaw() * ((float)Math.PI / 180)), MathHelper.cos(attacker.getYaw() * ((float)Math.PI / 180)));
+        }
+    }
+
+    private static void atrophy(LivingEntity attacker, Entity target) {
+        int level = EnchantmentHelper.getEquipmentLevel(EEEnchantments.ATROPHY, attacker);
+
+        if (level > 0 && target instanceof LivingEntity && ((LivingEntity) target).hurtTime == 0) {
+            attacker.damage(EEDamageSource.atrophy(attacker), level);
         }
     }
 }
