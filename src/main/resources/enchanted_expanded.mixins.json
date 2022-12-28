@@ -10,7 +10,10 @@
         "WitherSkeletonEntityMixin",
         "HoeItemMixin",
         "CrossbowItemMixin",
-        "PersistentProjectileEntityMixin"
+        "PersistentProjectileEntityMixin",
+        "FlintAndSteelItemMixin",
+        "LivingEntityAccessor",
+        "ItemStackMixin"
     ],
     "injectors": {
         "defaultRequire": 1

@@ -6,28 +6,33 @@ import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.entity.EntityGroup;
 import net.minecraft.entity.EquipmentSlot;
 
-public class AtrophyEnchantment extends Enchantment implements PolymerObject {
-    protected AtrophyEnchantment(Rarity weight, EquipmentSlot slotTypes) {
+public class BrutalityEnchantment extends Enchantment implements PolymerObject {
+    protected BrutalityEnchantment(Rarity weight, EquipmentSlot slotTypes) {
         super(weight, EnchantmentTarget.WEAPON, new EquipmentSlot[]{slotTypes});
-    }
-    
-    @Override
-    public boolean isCursed() {
-        return true;
     }
 
     @Override
     public int getMaxLevel() {
-        return 4;
+        return 5;
     }
 
     @Override
     public boolean isTreasure() {
-        return true;
+        return false;
     }
 
     @Override
     public float getAttackDamage(int level, EntityGroup group) {
-        return level;
+        return level * 2.5f;
+    }
+
+    @Override
+    public int getMinPower(int level) {
+        return 10 + (level - 1) * 4;
+    }
+
+    @Override
+    public int getMaxPower(int level) {
+        return this.getMinPower(level) + 15;
     }
 }

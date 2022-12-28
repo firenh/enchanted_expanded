@@ -1,6 +1,6 @@
 package fireopal.enchantedexpanded.enchantments;
 
-import eu.pb4.polymer.core.api.utils.PolymerObject;
+import eu.pb4.polymer.api.utils.PolymerObject;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.enchantment.Enchantments;
@@ -23,16 +23,6 @@ public class AlluringEnchantment extends Enchantment implements PolymerObject {
     @Override
     public boolean isTreasure() {
         return true;
-    }
-
-    @Override
-    public int getMinPower(int level) {
-        return 10 + 5 * level;
-    }
-
-    @Override
-    public int getMaxPower(int level) {
-        return 25 + level * 5;
     }
 
     @Override
