@@ -4,7 +4,7 @@ import java.util.UUID;
 
 import com.google.common.collect.ImmutableMap;
 
-import eu.pb4.polymer.api.utils.PolymerObject;
+import eu.pb4.polymer.core.api.utils.PolymerObject;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.enchantment.ProtectionEnchantment;
@@ -25,6 +25,16 @@ public class GrowthEnchantment extends Enchantment implements PolymerObject {
     
     public int getMaxLevel() {
         return 3;
+    }
+
+    @Override
+    public int getMinPower(int level) {
+        return 15 + 5 * level;
+    }
+
+    @Override
+    public int getMaxPower(int level) {
+        return getMinPower(level + 1) + level * 2;
     }
 
     @Override

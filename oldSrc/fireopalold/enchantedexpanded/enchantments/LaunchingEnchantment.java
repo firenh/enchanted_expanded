@@ -2,7 +2,7 @@ package fireopal.enchantedexpanded.enchantments;
 
 import java.util.List;
 
-import eu.pb4.polymer.api.utils.PolymerObject;
+import eu.pb4.polymer.core.api.utils.PolymerObject;
 import net.minecraft.enchantment.KnockbackEnchantment;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;

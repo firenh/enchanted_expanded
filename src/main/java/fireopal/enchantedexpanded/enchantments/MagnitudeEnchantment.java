@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.function.BiConsumer;
 import java.util.function.Function;
 
-import eu.pb4.polymer.api.utils.PolymerObject;
+import eu.pb4.polymer.core.api.utils.PolymerObject;
 import fireopal.enchantedexpanded.duck.DuckPlayerEntity;
 import fireopal.enchantedexpanded.gameplay.OnAttack;
 import net.minecraft.enchantment.Enchantment;
@@ -18,7 +18,6 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.particle.DustParticleEffect;
 import net.minecraft.particle.ParticleEffect;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.server.world.ServerWorld;
@@ -29,7 +28,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
-import net.minecraft.util.math.Vec3f;
 import net.minecraft.world.World;
 
 public class MagnitudeEnchantment extends Enchantment implements PolymerObject {
@@ -50,6 +48,16 @@ public class MagnitudeEnchantment extends Enchantment implements PolymerObject {
     @Override
     public boolean canAccept(Enchantment other) {
         return (other != Enchantments.SWEEPING);
+    }
+
+    @Override
+    public int getMinPower(int level) {
+        return 20 + 5 * level;
+    }
+
+    @Override
+    public int getMaxPower(int level) {
+        return 30 + level * 5;
     }
 
     public static void onUseMagnitude(LivingEntity entity) {

@@ -12,7 +12,6 @@
         "CrossbowItemMixin",
         "PersistentProjectileEntityMixin",
         "FlintAndSteelItemMixin",
-        "LivingEntityAccessor",
         "ItemStackMixin"
     ],
     "injectors": {

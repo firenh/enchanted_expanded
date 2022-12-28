@@ -2,8 +2,11 @@
     "replace": false,
     "values": [
         "minecraft:fire",
-        "#minecraft:lava",
-        "#minecraft:water",
-        "minecraft:soul_fire"
+        "minecraft:lava",
+        "minecraft:water",
+        "minecraft:soul_fire",
+        "minecraft:lava_cauldron",
+        "minecraft:magma_block",
+        "#minecraft:ice"
     ]
 }

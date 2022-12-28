@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.function.BiConsumer;
 import java.util.function.Function;
 
-import eu.pb4.polymer.api.utils.PolymerObject;
+import eu.pb4.polymer.core.api.utils.PolymerObject;
 import fireopal.enchantedexpanded.duck.DuckPlayerEntity;
 import fireopal.enchantedexpanded.gameplay.OnAttack;
 import net.minecraft.enchantment.Enchantment;

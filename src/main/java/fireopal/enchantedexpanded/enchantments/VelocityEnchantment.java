@@ -1,6 +1,6 @@
 package fireopal.enchantedexpanded.enchantments;
 
-import eu.pb4.polymer.api.utils.PolymerObject;
+import eu.pb4.polymer.core.api.utils.PolymerObject;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.enchantment.Enchantments;
@@ -17,7 +17,17 @@ public class VelocityEnchantment extends Enchantment implements PolymerObject {
     }
 
     @Override
+    public int getMinPower(int level) {
+        return 10 + (level - 1) * 7;
+    }
+
+    @Override
+    public int getMaxPower(int level) {
+        return this.getMinPower(level) + 10;
+    }
+
+    @Override
     public boolean canAccept(Enchantment other) {
-        return other != Enchantments.PIERCING || other != Enchantments.MULTISHOT; 
+        return other != Enchantments.PIERCING || other != Enchantments.MULTISHOT || other != Enchantments.QUICK_CHARGE; 
     }
 }

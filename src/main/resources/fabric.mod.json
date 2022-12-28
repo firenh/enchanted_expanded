@@ -31,9 +31,9 @@
     "fabric-api": "*",
     "minecraft": "~1.19",
     "java": ">=17",
-    "polymer": ">=0.2.20"
+    "polymer-core": ">=0.3.3"
   },
   "suggests": {
-    "polymer": "0.2.20"
+    "polymer-core": "0.3.3"
   }
 }
